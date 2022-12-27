@@ -9,7 +9,7 @@ const Main = () => {
             <Nav></Nav>
             <div className='flex'>
                 {/* left side bar */}
-                <div className='lg:w-3/12 hidden lg:block bg-slate-500 '>
+                <div className='lg:w-3/12 hidden lg:block bg-teal-100 '>
                     <ul className="menu p-4 text-base-content">
                         <li><a>Sidebar Item 1</a></li>
                         <li><a>Sidebar Item 2</a></li>
@@ -17,12 +17,12 @@ const Main = () => {
                 </div>
 
                 {/* Contents */}
-                <div className='lg:w-6/12 w-full bg-blue-300'>
+                <div className='lg:w-6/12 w-full bg-teal-50'>
                     <Outlet></Outlet>
                 </div>
 
                 {/* right side bar */}
-                <div className='lg:w-3/12 hidden lg:block bg-green-300'>
+                <div className='lg:w-3/12 hidden lg:block bg-teal-100'>
                     <ul className="menu p-4 text-base-content">
                         <li><a>Sidebar Item 1</a></li>
                         <li><a>Sidebar Item 2</a></li>

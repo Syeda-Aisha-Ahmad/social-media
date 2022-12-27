@@ -1,12 +1,10 @@
 import React from 'react';
-import Main from '../../../Routes/Main/Main';
-import Footer from '../../../Shared/Footer/Footer';
-import Nav from '../../../Shared/Nav/Nav';
+import Post from './Post/Post';
 
 const Home = () => {
     return (
         <div>
-            <h1>Helllllllllllllllo</h1>
+            <Post></Post>
         </div>
     );
 };
