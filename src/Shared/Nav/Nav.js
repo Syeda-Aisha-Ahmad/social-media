@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
     return (
@@ -17,6 +18,8 @@ const Nav = () => {
                         <li><a>Home</a></li>
                         <li><a> Media</a></li>
                         <li><a>About</a></li>
+                        <li><a>Sidebar Item 1</a></li>
+                        <li><a>Sidebar Item 2</a></li>
                         <a className="btn">Sign In</a>
                     </ul>
                 </div>
@@ -27,9 +30,9 @@ const Nav = () => {
 
                 {/* Large screen */}
                 <ul className="menu menu-horizontal px-1">
-                    <li><a>Home</a></li>
-                    <li><a> Media</a></li>
-                    <li><a>About</a></li>
+                    <li><Link to={'/'}>Home</Link></li>
+                    <li><Link to={'/media'}>Media</Link></li>
+                    <li><Link to={'/about'}>About</Link></li>
                 </ul>
                 <a className="btn">Sign In</a>
             </div>
