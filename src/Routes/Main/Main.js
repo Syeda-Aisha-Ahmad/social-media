@@ -7,10 +7,10 @@ const Main = () => {
     return (
         <div>
             <Nav></Nav>
-            <div className='flex'>
+            <div className='flex absolute top-65 mt-16'>
                 {/* left side bar */}
-                <div className='lg:w-3/12 hidden lg:block bg-teal-100 '>
-                    <ul className="menu p-4 text-base-content">
+                <div className='lg:w-3/12 hidden lg:block bg-teal-100 relative'>
+                    <ul className="menu p-4 text-base-content fixed">
                         <li><a>Sidebar Item 1</a></li>
                         <li><a>Sidebar Item 2</a></li>
                     </ul>
@@ -22,14 +22,13 @@ const Main = () => {
                 </div>
 
                 {/* right side bar */}
-                <div className='lg:w-3/12 hidden lg:block bg-teal-100'>
-                    <ul className="menu p-4 text-base-content">
+                <div className='lg:w-3/12 hidden lg:block bg-teal-100 relative'>
+                    <ul className="menu p-4 text-base-content fixed">
                         <li><a>Sidebar Item 1</a></li>
                         <li><a>Sidebar Item 2</a></li>
                     </ul>
                 </div>
             </div>
-            <Footer></Footer>
         </div>
     );
 };

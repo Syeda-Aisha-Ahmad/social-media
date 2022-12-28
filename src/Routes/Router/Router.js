@@ -1,4 +1,5 @@
 import About from "../../Pages/About/About";
+import Media from "../../Pages/Media/Media";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Home } = require("../../Pages/Home/Home/Home");
@@ -13,10 +14,16 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>
             },
+
             {
                 path: '/about',
                 element: <About></About>
-            }
+            },
+
+            {
+                path: '/media',
+                element: <Media></Media>
+            },
         ]
     }
 ])
