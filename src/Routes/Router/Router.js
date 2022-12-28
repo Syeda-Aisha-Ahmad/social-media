@@ -1,4 +1,5 @@
 import About from "../../Pages/About/About";
+import Login from "../../Pages/Login/Login";
 import Media from "../../Pages/Media/Media";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -24,8 +25,13 @@ const router = createBrowserRouter([
                 path: '/media',
                 element: <Media></Media>
             },
+
         ]
-    }
+    },
+    {
+        path: '/signin',
+        element: <Login></Login>
+    },
 ])
 
 export default router;

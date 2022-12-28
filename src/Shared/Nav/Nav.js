@@ -21,7 +21,7 @@ const Nav = () => {
                             <li><Link to={'/about'}>About</Link></li>
                             <li><a>Sidebar Item 1</a></li>
                             <li><a>Sidebar Item 2</a></li>
-                            <a className="btn bg-teal-600 border-none">Sign In</a>
+                            <Link to={'/signin'} className="btn bg-teal-600 border-none">Sign In</Link>
                         </ul>
                     </div>
 
@@ -35,7 +35,7 @@ const Nav = () => {
                         <li><Link to={'/media'}>Media</Link></li>
                         <li><Link to={'/about'}>About</Link></li>
                     </ul>
-                    <a className="btn bg-teal-600 border-none">Sign In</a>
+                    <Link to={'/signin'} className="btn bg-teal-600 border-none">Sign In</Link>
                 </div>
             </div>
         </nav>
