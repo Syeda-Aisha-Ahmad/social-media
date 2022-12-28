@@ -1,5 +1,5 @@
 import React from 'react';
-import { MdSchool, MdWork, MdHome, MdLocationOn, MdPerson, MdEmail } from "react-icons/md";
+import { MdSchool, MdWork, MdHome, MdLocationOn, MdPerson, MdEmail, MdCake } from "react-icons/md";
 
 const About = () => {
     return (
@@ -25,6 +25,9 @@ const About = () => {
 
             <div className='text-left my-5 text-lg'>
                 <h3 className='font-bold bg-teal-100 opacity-75 text-black text-xl text-center py-2'>Self Details</h3>
+                <p className='my-5 flex items-center text-lg'>
+                    <MdCake className='mr-3 text-xl text-teal-900' />Birth Day is<span className="font-semibold ml-1">11/12/2001</span>
+                </p>
                 <p className='my-5 flex items-center text-lg'>
                     <MdWork className='mr-3 text-xl text-teal-900' />Works at<span className="font-semibold ml-1"> Dhonia univercity and collage</span>
                 </p>

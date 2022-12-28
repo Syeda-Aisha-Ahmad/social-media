@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Nav = () => {
     return (
         <nav className='relative z-10'>
-            <div className="navbar bg-teal-50 drop-shadow-lg fixed">
+            <div className="navbar bg-teal-50 drop-shadow-lg fixed px-10">
                 <div className="navbar-start">
                     <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
                 </div>
