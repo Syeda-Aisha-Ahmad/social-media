@@ -1,11 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { FcGoogle } from "react-icons/fc";
+import { FaCamera } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';
+import './Signup.css'
 
 const Signup = () => {
 
-    const { createUser, googleLogin, updateUser } = useContext(AuthContext)
+    const { createUser, googleLogin, updateUser, loading } = useContext(AuthContext)
     const [createdUserEmail, setCreatedUserEmail] = useState('')
 
     const signupInfo = (event) => {
@@ -14,35 +17,34 @@ const Signup = () => {
         const fname = form.fname.value;
         const email = form.email.value;
         const location = form.location.value;
+        const photo = form.photo.value;
         const password = form.password.value;
-
-        const userInfo = {
-            fname,
-            email,
-            location,
-            password
-        }
+        form.reset()
 
         createUser(email, password)
             .then(result => {
                 const user = result.user;
+                toast.success('Account Created Successfully!')
+                saveUser(fname, email, photo, location);
+                const userInfo = {
+                    displayName: fname
+                }
+                updateUser(userInfo)
+                    .then(() => {
+
+                    })
+                    .catch(error => console.log(error));
             })
             .catch(error => {
                 console.error(error)
             })
 
-        updateUser(userInfo)
-            .then(() => {
-                saveUser(fname, email, location, password);
-            })
-            .catch(error => console.log(error));
 
-        console.log(userInfo)
     }
 
-    const saveUser = (name, email, location, password) => {
-        const user = { name, email, location, password };
-        fetch('http://localhost:5000/users', {
+    const saveUser = (name, email, photo, location) => {
+        const user = { name, email, photo, location };
+        fetch(' https://server-ashy-eta.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -60,7 +62,7 @@ const Signup = () => {
         googleLogin()
             .then((result => {
                 const user = result.user;
-                saveUser(user.displayName, user.email, "none", "none")
+                saveUser(user?.displayName, user?.email, "none", "none")
             }))
             .catch = (error => {
                 console.error(error)
@@ -71,6 +73,10 @@ const Signup = () => {
 
     return (
         <div className="hero min-h-screen bg-base-200">
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+            />
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <h1 className='text-3xl font-bold text-teal-700 text-center mt-5'>Create An Account</h1>
                 <form onSubmit={signupInfo}>
@@ -89,7 +95,14 @@ const Signup = () => {
                         </div>
 
                         <div className="form-control mt-2">
-                            <input type="text" name='password' placeholder="Password" className="input input-bordered" />
+                            <label for="inputTag" className='cursor-pointer input input-bordered pr-10 flex items-center bg-teal-100'>
+                                <FaCamera className='mr-2 text-xl' /> Upload Image
+                                <input id='inputTag' type="file" name='photo' placeholder="Photo" className="" />
+                            </label>
+                        </div>
+
+                        <div className="form-control mt-2">
+                            <input type="password" name='password' placeholder="Password" className="input input-bordered" />
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover mt-3 text-teal-700 text-sm font-semibold">Forgot password?</a>
                             </label>

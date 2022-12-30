@@ -4,7 +4,7 @@ import Post from './Post/Post';
 
 const Home = () => {
     return (
-        <div>
+        <div className=''>
             <Post></Post>
             <Popular></Popular>
         </div>

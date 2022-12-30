@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaHeart, FaComment, FaBookmark } from 'react-icons/fa';
+import { AuthContext } from '../../../../Context/AuthProvider';
 const Popular = () => {
+    const { user } = useContext(AuthContext);
     return (
         <div className='lg:mx-10 my-10 mx-5 p-5 bg-white rounded-xl border shadow-xl'>
             <div className='flex items-center'>
@@ -8,7 +10,7 @@ const Popular = () => {
                     <img className='rounded-full' src="https://placeimg.com/80/80/people" />
                 </div>
                 <div className='text-left'>
-                    <div className='font-bold'>Dan Walker</div>
+                    <div className='font-bold'>{user?.displayName}</div>
                     <div className='text-sm text-gray-500'>July 26 2018, 01:03pm</div>
                 </div>
             </div>
